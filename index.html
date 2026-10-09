@@ -24,6 +24,7 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            width: 100%;
         }
         h1 {
             font-size: 24px;
@@ -36,6 +37,32 @@
             color: #666;
             line-height: 1.6;
         }
+        /* Estilos del Carrusel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 20px 0;
+            background-color: #eee;
+        }
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Botones de contacto */
         .contact-buttons {
             display: flex;
             justify-content: center;
@@ -95,6 +122,16 @@
     <div class="container">
         <h1>GRUPO TAMBUL</h1>
         <p>Estamos trabajando en nuestro sitio web informativo sobre nuestros olivares y producción en Caramarca.</p>
+        
+        <!-- Carrusel de imágenes -->
+        <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide"><img src="images/foto1.jpg" alt="Olivares Grupo Tambul 1"></div>
+                <div class="carousel-slide"><img src="images/foto2.jpg" alt="Olivares Grupo Tambul 2"></div>
+                <div class="carousel-slide"><img src="images/foto3.jpg" alt="Olivares Grupo Tambul 3"></div>
+            </div>
+        </div>
+
         <p><strong>Pronto estará disponible. Disculpe las molestias.</strong></p>
         
         <!-- Botones de contacto -->
@@ -113,6 +150,20 @@
             Grupo Tambul &copy; 2026
         </div>
     </div>
+
+    <!-- Script sencillo para que el carrusel rote automáticamente cada 3 segundos -->
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+
+        function moveToNextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        }
+
+        setInterval(moveToNextSlide, 3000); // Cambia de foto cada 3 segundos
+    </script>
 
 </body>
 </html>
