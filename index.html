@@ -123,12 +123,17 @@
         <h1>GRUPO TAMBUL</h1>
         <p>Estamos trabajando en nuestro sitio web informativo sobre nuestros olivares y producción en Caramarca.</p>
         
-        <!-- Carrusel de imágenes -->
+        <!-- Carrusel con las 8 imágenes -->
         <div class="carousel">
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-slide"><img src="images/foto1.jpg" alt="Olivares Grupo Tambul 1"></div>
                 <div class="carousel-slide"><img src="images/foto2.jpg" alt="Olivares Grupo Tambul 2"></div>
                 <div class="carousel-slide"><img src="images/foto3.jpg" alt="Olivares Grupo Tambul 3"></div>
+                <div class="carousel-slide"><img src="images/foto4.jpg" alt="Olivares Grupo Tambul 4"></div>
+                <div class="carousel-slide"><img src="images/foto5.jpg" alt="Olivares Grupo Tambul 5"></div>
+                <div class="carousel-slide"><img src="images/foto6.jpg" alt="Olivares Grupo Tambul 6"></div>
+                <div class="carousel-slide"><img src="images/foto7.jpg" alt="Olivares Grupo Tambul 7"></div>
+                <div class="carousel-slide"><img src="images/foto8.jpg" alt="Olivares Grupo Tambul 8"></div>
             </div>
         </div>
 
@@ -151,7 +156,7 @@
         </div>
     </div>
 
-    <!-- Script sencillo para que el carrusel rote automáticamente cada 3 segundos -->
+    <!-- Script del carrusel automático -->
     <script>
         const track = document.getElementById('carouselTrack');
         const slides = Array.from(track.children);
@@ -162,7 +167,7 @@
             track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
         }
 
-        setInterval(moveToNextSlide, 3000); // Cambia de foto cada 3 segundos
+        setInterval(moveToNextSlide, 3000); // Rota automáticamente cada 3 segundos
     </script>
 
 </body>
